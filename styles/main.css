@@ -310,44 +310,87 @@ body:not(.not-loaded) .loader,
 }
 
 .flower--1 {
+  left: 8%;
   animation: moving-flower-1 4s linear infinite;
-  transform: scale(1.15);
+  transform: scale(1.0) rotate(-6deg);
+  z-index: 9;
 }
 
 .flower--2 {
+  left: 20%;
   animation: moving-flower-2 4s linear infinite;
   z-index: 12;
-  transform: scale(0.85);
+  transform: scale(0.9) rotate(4deg);
 }
 
 .flower--3 {
+  left: 32%;
   animation: moving-flower-3 4s linear infinite;
   z-index: 11;
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(-3deg);
 }
 
 .flower--4 {
+  left: 43%;
   animation: moving-flower-4 4s linear infinite;
   z-index: 13;
-  transform: scale(0.9);
+  transform: scale(1.15) rotate(5deg);
 }
 
 .flower--5 {
+  left: 55%;
   animation: moving-flower-1 4.5s linear infinite;
-  z-index: 9;
-  transform: scale(1.1);
+  z-index: 10;
+  transform: scale(1.05) rotate(-5deg);
 }
 
 .flower--6 {
+  left: 66%;
   animation: moving-flower-2 3.8s linear infinite;
   z-index: 14;
-  transform: scale(0.95);
+  transform: scale(0.95) rotate(7deg);
 }
 
 .flower--7 {
+  left: 77%;
   animation: moving-flower-3 4.2s linear infinite;
   z-index: 8;
-  transform: scale(0.8);
+  transform: scale(0.85) rotate(-8deg);
+}
+
+.flower--8 {
+  left: 14%;
+  animation: moving-flower-4 4.6s linear infinite;
+  z-index: 7;
+  transform: scale(0.8) rotate(10deg);
+}
+
+.flower--9 {
+  left: 38%;
+  animation: moving-flower-1 3.9s linear infinite;
+  z-index: 15;
+  transform: scale(1.2) rotate(-2deg);
+}
+
+.flower--10 {
+  left: 60%;
+  animation: moving-flower-2 4.3s linear infinite;
+  z-index: 8;
+  transform: scale(0.88) rotate(6deg);
+}
+
+.flower--11 {
+  left: 84%;
+  animation: moving-flower-3 4.1s linear infinite;
+  z-index: 10;
+  transform: scale(1.0) rotate(-4deg);
+}
+
+.flower--12 {
+  left: 50%;
+  animation: moving-flower-4 4.4s linear infinite;
+  z-index: 16;
+  transform: scale(1.08) rotate(3deg);
 }
 
 .flower--1 .flower__line {
@@ -490,7 +533,6 @@ body:not(.not-loaded) .loader,
 }
 
 .flower--tulip {
-  left: 32%;
   right: auto;
   transform: rotate(8deg);
   --petal-base: linear-gradient(to top, #ff6b9d, #c9184a);
@@ -627,6 +669,39 @@ body:not(.not-loaded) .loader,
 
 .flower__leafs--tulip {
   animation-delay: 2.3s;
+}
+
+/* ── Tulip-specific petal overrides ── */
+.flower--tulip .flower__leaf {
+  width: 5vmin;
+  height: 11vmin;
+  border-radius: 48% 52% 10% 10% / 80% 80% 20% 20%;
+  opacity: 0.95;
+}
+
+.flower--tulip .flower__leaf--1 {
+  transform: translate(-10%, 2%) rotateY(30deg) rotateX(-20deg);
+}
+
+.flower--tulip .flower__leaf--2 {
+  transform: translate(-50%, -6%) rotateX(10deg);
+}
+
+.flower--tulip .flower__leaf--3 {
+  transform: translate(-90%, 2%) rotateY(-30deg) rotateX(-20deg);
+}
+
+.flower--tulip .flower__leaf--4 {
+  width: 5.5vmin;
+  height: 9vmin;
+  border-radius: 48% 52% 10% 10% / 80% 80% 20% 20%;
+  transform: translate(-45%, 10%) rotateX(30deg) rotate(-5deg);
+  background-image: var(--petal-secondary);
+}
+
+/* Hide the generic white disc centre on tulips */
+.flower--tulip .flower__white-circle {
+  display: none;
 }
 
 .flower__leafs--rose {
@@ -858,15 +933,17 @@ body:not(.not-loaded) .loader,
 
 .flower__grass--1 {
   --grass-scale: 0.08;
-  left: -5%;
-  transform: rotate(-25deg) rotateY(30deg) scale(var(--grass-scale));
+  left: 0%;
+  transform: rotate(-25deg) scale(var(--grass-scale));
+  transform-origin: bottom center;
   animation: moving-grass 2s linear infinite;
 }
 
 .flower__grass--2 {
-  --grass-scale: 0.08;
-  left: 25%;
-  transform: scale(var(--grass-scale)) rotate(55deg) rotateX(8deg) rotateY(-160deg);
+  --grass-scale: 0.09;
+  left: 18%;
+  transform: scale(var(--grass-scale)) rotate(-15deg) scaleX(-1);
+  transform-origin: bottom center;
   opacity: 0.8;
   z-index: 0;
   animation: moving-grass-2 1.5s linear infinite;
@@ -874,17 +951,19 @@ body:not(.not-loaded) .loader,
 
 .flower__grass--3 {
   --grass-scale: 0.1;
-  left: 60%;
-  transform: scale(var(--grass-scale)) rotate(-35deg) rotateY(20deg);
+  left: 72%;
+  transform: scale(var(--grass-scale)) rotate(-10deg);
+  transform-origin: bottom center;
   opacity: 0.85;
   z-index: 1;
   animation: moving-grass 2.2s linear infinite;
 }
 
 .flower__grass--4 {
-  --grass-scale: 0.1;
-  left: 95%;
-  transform: scale(var(--grass-scale)) rotate(40deg) rotateX(-8deg) rotateY(-120deg);
+  --grass-scale: 0.09;
+  left: 90%;
+  transform: scale(var(--grass-scale)) rotate(20deg) scaleX(-1);
+  transform-origin: bottom center;
   opacity: 0.75;
   z-index: 1;
   animation: moving-grass-2 1.8s linear infinite;
